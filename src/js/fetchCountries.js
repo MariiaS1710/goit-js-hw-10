@@ -1,15 +1,15 @@
-export const fetchCountries = name => {
+export const fetchCountries= name => {
     return fetch(
-        ` https://restcountries.com/v3.1/name/${name}?fields=,name,capital,population,flags,languages`
+        `https://restcountries.com/v3.1/name/${name}?fields=,name,capital,population,flags,languages`
     )
-        .then(responce => {
-            if (!responce.ok) {
-                if (responce.status === 404) {
+        .then(response => {
+            if (!response.ok) {
+                if (response.status === 404) {
                     return [];
                 }
-                throw new Error(responce.status);
+                throw new Error(response.status);
             }
-            return responce.json()
+            return response.json()
         })
         .catch(error => {
             console.error(error);
