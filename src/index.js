@@ -34,10 +34,11 @@ input.addEventListener(
 function renderCountryList(countries) {
     const markup = countries.map(country => {
         return `<li>
-        <img src="${country.flag.svg}" alt ="Flag of ${country.name.official}" width="30" hight="20">
+        <img src="${country.flags.svg}" alt ="Flag of ${country.name.official}" width="30" hight="20">
         <p>${country.name.official}<p/>
         </li>`;
-    }).join('');
+    })
+        .join('');
     countryList.innerHTML = markup;
 }
 
@@ -45,7 +46,7 @@ function renderOneCountry(countries) {
     const markup = countries
         .map(country => {
             return `<li>
-        <img src="${country.flag.svg}" alt ="Flag of ${country.name.official}" width="30" hight="20">
+        <img src="${country.flags.svg}" alt ="Flag of ${country.name.official}" width="30" hight="20">
         <p>${country.name.official}<p/>
         <p><b>Capital<b/>:${country.capital}<p/>
         <p><b>Populationl<b/>:${country.population}<p/>
